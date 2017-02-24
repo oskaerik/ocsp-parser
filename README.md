@@ -1,2 +1,2 @@
-# ocsp-parser
-A client that prints information from an OCSP response.
+# OCSP Parser
+A basic client that prints information from an OCSP response using the Bouncy Castle Cryptography Library.
