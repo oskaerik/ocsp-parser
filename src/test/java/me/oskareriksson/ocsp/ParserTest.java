@@ -1,8 +1,9 @@
+package me.oskareriksson.ocsp;
+
 import org.bouncycastle.cert.ocsp.OCSPException;
 import org.bouncycastle.cert.ocsp.OCSPResp;
 import org.junit.Test;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -19,16 +20,12 @@ public class ParserTest {
     private byte[] ocspResponse = Files.readAllBytes(Paths.get("input/input.in"));
 
         /**
-         * Constructor for the ParserTest class
+         * Constructor for the me.oskareriksson.ocsp.ParserTest class
          * @throws IOException
          * @throws OCSPException
          */
     public ParserTest() throws IOException, OCSPException {
         parser = new Parser(ocspResponse);
-
-        FileOutputStream fileOuputStream = new FileOutputStream("input.in");
-        fileOuputStream.write(ocspResponse);
-        fileOuputStream.close();
     }
 
     /**
