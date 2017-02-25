@@ -18,13 +18,13 @@ public class ParserTest {
     private byte[] ocspResponse;
     private Parser parser;
 
-        /**
-         * Constructor for the ParserTest class, uses the example file
-         * example1.in to run the unit tests.
-         *
-         * @throws IOException
-         * @throws OCSPException
-         */
+    /**
+     * Constructor for the ParserTest class, uses the example file
+     * example1.in to run the unit tests.
+     *
+     * @throws IOException
+     * @throws OCSPException
+     */
     public ParserTest() throws IOException, OCSPException {
         ocspResponse = new FileToByteArray("example1.in").getByteArray();
         parser = new Parser(ocspResponse);

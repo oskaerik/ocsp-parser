@@ -60,7 +60,7 @@ public class Parser {
     }
 
     /**
-     * Prints information from the OCSP response in the simplest possible form
+     * Prints information from the OCSP response in simple form
      */
     public void printSimple() {
         // Print message
@@ -109,18 +109,17 @@ public class Parser {
      *
      * @param pattern The pattern to be matched
      * @param input The string to be searched
-     * @return A list containing the matches
+     * @return A set containing the matches
      */
     private Set<String> findMatches(String pattern, String input) {
         Set<String> matches = new HashSet<>();
         Matcher matcher = Pattern.compile(pattern).matcher(input);
 
-        // Find all matches in the string
+        // Find all matches in the string and add to the set
         while (matcher.find()) {
             matches.add(matcher.group(1));
         }
 
         return matches;
     }
-
 }

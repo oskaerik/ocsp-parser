@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 /**
- * The FileToByteArray class parses a Base64 encoded file, decodes it and creates a byte array.
+ * The FileToByteArray class reads a Base64 encoded file, decodes it and creates a byte array.
  *
  * @author Oskar Eriksson
  * @version 1.0
@@ -20,6 +20,7 @@ public class FileToByteArray {
      * Constructor for the FileToByteArray class. It takes a filename as a parameter
      * and creates a byte array from the Base64 encoded file.
      *
+     * @param fileName The name of the file in the input directory to be parsed
      * @throws IOException
      */
     public FileToByteArray(String fileName) throws IOException {
