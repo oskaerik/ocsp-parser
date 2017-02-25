@@ -1,4 +1,7 @@
 # From different .gitignores on: github.com/github/gitignore
+# Ignore
+!/libs/
+!ocsp-parser.jar
 
 # Java
 *.class

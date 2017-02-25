@@ -17,9 +17,26 @@ apply plugin: 'idea'
 apply plugin: 'application'
 
 // Main class
-mainClassName = 'Main'
+mainClassName = 'me.oskareriksson.ocsp.Main'
 
-version = '1.0'
+// Task to build a fat jar
+jar {
+    manifest {
+        attributes "Main-Class": "$mainClassName"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
+}
+
+// Command line arguments
+run {
+    if (project.hasProperty('args')) {
+        args project.args.split('\\s+')
+    }
+}
 
 // In this section you declare where to find the dependencies of your project
 repositories {
