@@ -3,8 +3,6 @@ package me.oskareriksson.ocsp;
 import org.bouncycastle.cert.ocsp.OCSPException;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 /**
  * The Main class contains the main method for the OCSP Parser client.
@@ -24,7 +22,7 @@ public class Main {
      */
     public static void main(String[] args) throws IOException, OCSPException {
         // Read the input file specified in the command line arguments
-        byte[] ocspResponse = Files.readAllBytes(Paths.get("input/" + args[0]));
+        byte[] ocspResponse = new FileToByteArray(args[0]).getByteArray();
 
         // Create a new Parser object with the OCSP response byte array
         Parser parser = new Parser(ocspResponse);

@@ -5,8 +5,6 @@ import org.bouncycastle.cert.ocsp.OCSPResp;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static org.junit.Assert.*;
 
@@ -21,15 +19,14 @@ public class ParserTest {
     private Parser parser;
 
         /**
-         * Constructor for the ParserTest class.
+         * Constructor for the ParserTest class, uses the example file
+         * example1.in to run the unit tests.
          *
          * @throws IOException
          * @throws OCSPException
          */
     public ParserTest() throws IOException, OCSPException {
-        // Reads the example file input.in
-        ocspResponse = Files.readAllBytes(Paths.get("input/input.in"));
-
+        ocspResponse = new FileToByteArray("example1.in").getByteArray();
         parser = new Parser(ocspResponse);
     }
 

@@ -22,7 +22,6 @@ import java.util.regex.Pattern;
  * @version 1.0
  */
 public class Parser {
-    // Private fields
     private OCSPResp ocspResp;
     private BasicOCSPResp basicOCSPResp;
     private SingleResp[] singleResponses;
