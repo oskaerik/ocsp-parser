@@ -29,10 +29,15 @@ public class Main {
         // Create a new Parser object with the OCSP response byte array
         Parser parser = new Parser(ocspResponse);
 
+        // Display message
+        System.out.println("----- OCSP Parser -----");
+        System.out.println("Parsing file: " + args[0]);
         if (args.length == 1 || args[1].equals("simple")) {
             // If the client runs in simple mode, output information from the OCSP response in simple form
             parser.printSimple();
         } else if (args[1].equals("dump")) {
+
+
             // If the client runs in dump mode, dump the OCSP response using dumpAsString
             parser.printDump();
         } else {
