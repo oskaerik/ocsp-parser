@@ -11,20 +11,25 @@ import java.nio.file.Paths;
 import static org.junit.Assert.*;
 
 /**
+ * A test class that tests the Parser class, making sure the OCSP response is valid.
+ *
  * @author Oskar Eriksson
  * @version 1.0
  */
 public class ParserTest {
+    private byte[] ocspResponse;
     private Parser parser;
 
-    private byte[] ocspResponse = Files.readAllBytes(Paths.get("input/input.in"));
-
         /**
-         * Constructor for the me.oskareriksson.ocsp.ParserTest class
+         * Constructor for the ParserTest class.
+         *
          * @throws IOException
          * @throws OCSPException
          */
     public ParserTest() throws IOException, OCSPException {
+        // Reads the example file input.in
+        ocspResponse = Files.readAllBytes(Paths.get("input/input.in"));
+
         parser = new Parser(ocspResponse);
     }
 
